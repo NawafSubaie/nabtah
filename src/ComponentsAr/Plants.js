@@ -3,7 +3,7 @@ import {RiPlantFill} from 'react-icons/ri';
 import { Container } from 'react-bootstrap';
 import {Row} from 'react-bootstrap';
 import {Col} from 'react-bootstrap';
-import {GiCherry,GiCorn,GiGrapes,GiChiliPepper,GiPotato,GiTomato} from 'react-icons/gi'
+import {GiCherry,GiCorn,GiGrapes,GiBellPepper,GiPotato,GiTomato} from 'react-icons/gi'
 
 function Plants() {
     return (
@@ -36,19 +36,19 @@ function Plants() {
 
             <Row className='justify-content-center' style={{margin:'95px'}}>
                 <Col className='text-center' md={3}>
-                    <GiChiliPepper className='plant-icon m-3' />
-                    <h3 className='Poppins mt-2 plant-title'>الفلفل</h3>
-                    <small className='form-text'>الصحيّة</small>
+                    <GiBellPepper className='plant-icon m-3' />
+                    <h3 className='Poppins mt-2 plant-title'>الفلفل الأخضر</h3>
+                    <small className='form-text'>الصحيّة,  بقعة البكتيريا</small>
                 </Col>
                 <Col className='text-center' md={3}>
                     <GiPotato className='plant-icon m-3' />
                     <h3 className='Poppins mt-2 plant-title'>البطاطس</h3>
-                    <small className='form-text'>الصحيّة</small>
+                    <small className='form-text'>الصحيّة, اللفحة المتأخرة , اللفحة المبكرة</small>
                 </Col>
                 <Col className='text-center' md={3}>
                     <GiTomato className='plant-icon m-3' />
                     <h3 className='Poppins mt-2 plant-title'>الطماط</h3>
-                    <small className='form-text'>الصحيّة</small>
+                    <small className='form-text'>الصحيّة, بقعة الهدف, فيروس موسياك, اللفحة المتأخرة</small>
                 </Col>
             </Row>
 

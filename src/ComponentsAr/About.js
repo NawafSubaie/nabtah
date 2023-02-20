@@ -21,12 +21,17 @@ function About(props) {
             </div>
             
             
-            <p className='mb-3' style={{textAlign:'justify',marginTop:'50px',fontSize:'1.25rem'}}>Nabtah is a plant disease detection that uses machine learning algorithm to identify plant diseases and suggest treatment for them. The model is powered using VGG-19, 
-            VGG-19 is a convolutional neural network that is 19 layers deep, trained on a <a href='https://paperswithcode.com/dataset/plantvillage' target="_blank" style={{textDecoration:'None'}}>plant diseases dataset</a>.
-            Nabtah is our bachelor degree graduation project requirement for King Saud University. All of the treatment suggested are taken from <a href='https://www.gardeningknowhow.com/' target='_blank' style={{textDecoration:'None'}}>Gardening Know How
-            </a> is a website that aims to help people grow their gardens, it offers a variety of information regarding plant's and their diseases, as well as suggests treatments for them. </p>
+            <p className='mb-3' style={{textAlign:'right',marginTop:'50px',fontSize:'1.25rem'}}>VGG-19 نبتة هو نظام مبني بأستخدام خوارزميات تـعـلّم الآلـة لإكـتشـاف أمراض النبات وإقتراح خطة علاجـيّـة لتلك النبتـة، الـنـظـام مـشـغّـل بـواسـطـة خـوارزمـيـة 
+            <br/>
+             وهي شـبـكة عـصـبونـيّـة إلـتفـافـيّـة تستخدم 19 طـبـقـة، مدربة على  
+            <a href='https://paperswithcode.com/dataset/plantvillage' target="_blank" style={{textDecoration:'None'}}> مجموعة بيانات لأمراض النبات</a>.
+            نبتة هو مشروع التخرج لدرجة البكالوريوس في جامعة الملك سعود قسم هندسة البرمجيات. جميع الخطط العلاجيّة مستوحات من
+            <a href='https://www.gardeningknowhow.com/' target='_blank' style={{textDecoration:'None'}}> "چاردنينق نو هاو"  
+            </a> 
+             وهو موقع إلكتروني يهدف الى مساعدة الناس على زراعة النبات، موفرًا كمية ضخمة من البيانات على أنواع النبات وأمراضها وكذلك إقتراح خطط علاجيّة
+             </p>
             
-            <h1 className='mb-5' style={{fontWeight:'lighter',fontSize:'3.5em',color: '#3d4460',marginTop:'105px',textAlign:'center'}}>Meet The Team</h1>
+            <h1 className='mb-5' style={{fontWeight:'lighter',fontSize:'3.5em',color: '#3d4460',marginTop:'105px',textAlign:'center'}}>عن الفريق</h1>
             <Carousel variant="dark" interval={null}>
                 <Carousel.Item >
                     <img
@@ -36,8 +41,8 @@ function About(props) {
                     style={{width:'256px',height:'256px',borderRadius:'75px'}}
                     />
                  <Carousel.Caption className='m-3 text-center' style={{position:'static'}}>
-                    <h2 className='mb-3' style={{fontWeight:'lighter'}} >Fahad Abdullah Al-Araik</h2>
-                    <p className='Poppins mb-3 mt-2' style={{color: '#3d4460',fontWeight:'bold'}}>Project Leader, Software Engineer, Full-Stack Developer</p>
+                    <h2 className='mb-3' style={{fontWeight:'lighter'}} >فهد عبدالله العريك</h2>
+                    <p className='Poppins mb-3 mt-2' style={{color: '#3d4460',fontWeight:'bold'}}>مدير المشروع, مهندس برمجيات, مطور واجهات خلفية وأمامية</p>
                     <p> <a href='https://www.linkedin.com/in/fahad-al-araik-6a3676225/' className='p-2 about-icon'><BsLinkedin style={{height:'24px',width:'24px'}}/></a> 
                         <a href='https://twitter.com/fahad_alaraik' className='p-2 about-icon'><BsTwitter style={{height:'24px',width:'24px'}}/></a>
                      </p>
@@ -55,8 +60,8 @@ function About(props) {
                     style={{width:'256px',height:'256px',borderRadius:'75px'}}
                     />
                  <Carousel.Caption className='m-3 text-center' style={{position:'static'}}>
-                 <h2 className='mb-3' style={{fontWeight:'lighter'}} >Nawaf Saud Al-Subaie</h2>
-                 <p className='Poppins mb-3 mt-2' style={{color: '#3d4460',fontWeight:'bold'}}>Software Engineer, Front-End Developer</p>
+                 <h2 className='mb-3' style={{fontWeight:'lighter'}} >نواف سعود السبيعي</h2>
+                 <p className='Poppins mb-3 mt-2' style={{color: '#3d4460',fontWeight:'bold'}}>مهندس برمجيات, مطور واجهات أمامية</p>
                 <p> <a href='https://www.linkedin.com/in/nawafsubaie/' className='p-2 about-icon'><BsLinkedin style={{height:'24px',width:'24px'}}/></a> 
                     <a href='https://twitter.com/Nawafsuu' className='p-2 about-icon'><BsTwitter style={{height:'24px',width:'24px'}}/></a>
                 </p>
@@ -65,10 +70,8 @@ function About(props) {
                 </Carousel.Item>
                
             </Carousel>
-            <h1  style={{marginTop:'105px',fontWeight:'lighter',fontSize:'3.5em',color: '#3d4460',textAlign:'center'}}>Vision</h1>
-            <p className='mb-3' style={{textAlign:'justify',marginTop:'50px',fontSize:'1.25rem'}}>Our vision is to make Nabtah a large agriculture platform that can gather data from farmers or gardeners
-            and help them detect their crops diseases or even raise awarness of a new surfaced disease through out Saudi Arabia. We plan to collect more data about more diseases and add them to
-            our machine learning model to make it more comprehensive for all plants. Currently our model does not support all plants, since we lack the data (images) for them.</p>
+            <h1  style={{marginTop:'105px',fontWeight:'lighter',fontSize:'3.5em',color: '#3d4460',textAlign:'center'}}>رؤيتنا</h1>
+            <p className='mb-3' style={{textAlign:'center',marginTop:'50px',fontSize:'1.25rem'}}>تتمثل رؤيتنا في جعل نبتة منصة زراعية كبيرة يمكنها جمع البيانات من المزارعين ومساعدتهم على اكتشاف أمراض محاصيلهم أو حتى رفع مستوى الوعي بمرض جديد ظهر في جميع أنحاء المملكة العربية السعودية. نخطط لجمع المزيد من البيانات حول المزيد من الأمراض وإضافتها إلى نموذج التعلم الآلي الخاص بنا لجعله أكثر شمولاً لجميع النباتات. لا يدعم نموذجنا حاليًا جميع النباتات ، حيث إننا نفتقر إلى البيانات (الصور) الخاصة بهم.</p>
 
         </Container>
         <br />

@@ -46,10 +46,11 @@ function NavigationBar() {
             <Nav className=" text-capatalize " style={{marginLeft:'50px'}}>
                     
                    
-                    
+                     <Nav.Link href="/ar/about">عنّا</Nav.Link> 
+                     <Nav.Link href="/ar/#plants">النباتات</Nav.Link>
                     <Nav.Link href="/ar/#objectives">الأهداف</Nav.Link>
-                    <Nav.Link href="/ar/#plants">النباتات</Nav.Link>
-                    <Nav.Link href="/ar/about">عنّا</Nav.Link>
+                    
+                   
                     <Nav.Link href="/ar">الرئيسية</Nav.Link>
                     
                     
@@ -75,7 +76,7 @@ function NavigationBar() {
                     <NavDropdown.Item style={{fontsize:'0.75em'}} href="/ar/account">الحساب</NavDropdown.Item>
                     <NavDropdown.Item href="/ar/history">سجل التوقعات</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item onClick={() => {axios.post("http://localhost:5000/logout",{},{withCredentials:true}).then(resp => {sessionStorage.removeItem("logged");sessionStorage.removeItem("name");window.location.href = '/'})}}>تسجيل الخروج</NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => {axios.post("http://localhost:5000/logout",{},{withCredentials:true}).then(resp => {sessionStorage.removeItem("logged");sessionStorage.removeItem("name");window.location.href = '/ar'})}}>تسجيل الخروج</NavDropdown.Item>
                 </NavDropdown>
                     <Nav.Link  href="/">
                         <MdOutlineLanguage  />
@@ -84,10 +85,11 @@ function NavigationBar() {
             <Nav className=" text-capatalize " style={{marginLeft:'50px'}}>
                     
                    
-                    
+            <Nav.Link href="/ar/about">عنّا</Nav.Link> 
+                     <Nav.Link href="/ar/#plants">النباتات</Nav.Link>
                     <Nav.Link href="/ar/#objectives">الأهداف</Nav.Link>
-                    <Nav.Link href="/ar/#plants">النباتات</Nav.Link>
-                    <Nav.Link href="/ar/about">عنّا</Nav.Link>
+                    
+                   
                     <Nav.Link href="/ar">الرئيسية</Nav.Link>
                     
                     

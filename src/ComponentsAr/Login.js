@@ -53,10 +53,10 @@ function Login() {
                             }
 
                             else {
-                                updateError('Wrong Email or Password')
+                                updateError('كلمة مرور خاطئة او رقم جوال خاطئ')
                             }
                             
-                         }).catch(err => updateServerDown('Something wrong happened, it was not your fault !'))
+                         }).catch(err => updateServerDown('حصل خطأ ما! ليس خطأك'))
     }
 
     
@@ -82,9 +82,7 @@ function Login() {
                             {!showHide?<FaRegEyeSlash className='hide-show-password' style={{fill:'#555c79'}} onClick={(e) => {updateType('text');updateShowHide(!showHide)}}/>: <FaRegEye onClick={(e) =>{updateType('password');updateShowHide(!showHide)}} className='hide-show-password' /> }
                         </FloatingLabel>
 
-                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" name="remember" label="تذكّرني" onChange={(e) => updateRemember(e.target.value)} />
-                        </Form.Group>
+                       
                         <Button variant="dark" type="submit" onClick={handleSubmit}>
                             الدخول
                         </Button>
