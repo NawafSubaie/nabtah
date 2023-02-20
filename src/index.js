@@ -1,25 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
-import './NavigationBar.css';
-import './Login.css';
-import './Plants.css';
-import './UploadImage.css';
-import './PredictionResult.css';
-import './About.css';
-import './Account.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Home from './Home';
-import Nav from './NavigationBar';
+import './css/index.css';
+import './css/NavigationBar.css';
+import './css/Login.css';
+import './css/Plants.css';
+import './css/UploadImage.css';
+import './css/PredictionResult.css';
+import './css/About.css';
+import './css/Account.css';
+import AppAr from './ComponentsAr/AppAr';
+import reportWebVitals from './ComponentsEn/reportWebVitals';
+import Home from './ComponentsEn/Home'; // not used
+import Nav from './ComponentsEn/NavigationBar'; // not used
+import AppEng from './ComponentsEn/App'
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+  // get element by ID
+     var lang = document.getElementById("changeLanguage");
+     lang.addEventListener("onclick",()=>{console.log('hi')})
+});
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <App />
+      <AppEng />
   </React.StrictMode>
 );
 

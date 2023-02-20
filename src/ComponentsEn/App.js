@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './../icons/logo.svg';
+import './../css/App.css';
 import { BrowserRouter,Link,Route,Routes,useNavigate } from "react-router-dom";
 import Login from './Login';
 import Home from './Home';
@@ -15,6 +15,13 @@ import About from './About';
 import Plants from './Plants';
 import NavigationBar from './NavigationBar';
 import Footer from './Footer';
+import HomeAr from './../ComponentsAr/HomeAr'
+import AboutAr from './../ComponentsAr/About'
+import LoginAr from './../ComponentsAr/Login'
+import RegisterAr from './../ComponentsAr/Register'
+import UploadAr from './../ComponentsAr/UploadImage'
+import HistoryAr from './../ComponentsAr/History'
+import AccountAr from './../ComponentsAr/Account'
 
 function App() {
 
@@ -31,9 +38,20 @@ function App() {
       <Route path="/login" element={sessionStorage.getItem('logged') ? <Logged /> :<Login/>}></Route>
       <Route path="/register" element={sessionStorage.getItem('logged') ? <Logged /> :<Register/>}></Route>
       <Route path="/about" element={<About/>}></Route>
+
+      <Route path="/ar" element={<HomeAr />}></Route>
+      <Route path="/ar/about" element={<AboutAr />}></Route>
+      <Route path="/ar/login" element={<LoginAr />}></Route>
+      <Route path="/ar/register" element={<RegisterAr />}></Route>
+    
+
       {sessionStorage.getItem('logged') && <Route path ='/image' element={<UploadPage />}></Route> }
       {sessionStorage.getItem('logged') && <Route path ='/history' element={<History />}></Route> }
       {sessionStorage.getItem('logged') && <Route path ='/account' element={<Account />}></Route> }
+
+      {sessionStorage.getItem('logged') && <Route path ='/ar/image' element={<UploadAr />}></Route> }
+      {sessionStorage.getItem('logged') && <Route path ='/ar/history' element={<HistoryAr />}></Route> }
+      {sessionStorage.getItem('logged') && <Route path ='/ar/Account' element={<AccountAr />}></Route> }
       <Route path ='*' element={<NotFound />}></Route>
     </Routes>
 

@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col'
 import axios from 'axios';
 import { Alert } from 'react-bootstrap';
 import NavigationBar from './NavigationBar';
-import plant_pot from './icons/plant-pot.png';
+import plant_pot from './../icons/plant-pot.png';
 import {FaRegEyeSlash} from 'react-icons/fa'
 import {FaRegEye} from 'react-icons/fa'
 import Footer from './Footer'
@@ -71,27 +71,27 @@ function Login() {
 
             <Row  className='justify-content-center'>
                 <Col className='align-items-center align-self-center'>
-                    <h1 className='text-left Poppins'>Login</h1>
+                    <h1 className='text-left Poppins'>تسجيل الدخول</h1>
                     <Form className='mt-5'>
-                        <FloatingLabel controlId="floatingInput"  label="Email address or phone number" className="mb-3">
+                        <FloatingLabel controlId="floatingInput"  label="رقم الجوال" className="mb-3">
                             <Form.Control type="email" name="phone-number"  className='shadow-none ' placeholder="name@example.com" onChange={(e) => updatePhoneNumber(e.target.value)} />
                         </FloatingLabel>
 
-                        <FloatingLabel controlId="floatingInput"  label="Password" className="mb-3">
+                        <FloatingLabel controlId="floatingInput"  label="كلمة المرور" className="mb-3">
                             <Form.Control type={type} className='shadow-none' name="password" placeholder="12345678" onChange={(e) => updatePassword(e.target.value)} />
                             {!showHide?<FaRegEyeSlash className='hide-show-password' style={{fill:'#555c79'}} onClick={(e) => {updateType('text');updateShowHide(!showHide)}}/>: <FaRegEye onClick={(e) =>{updateType('password');updateShowHide(!showHide)}} className='hide-show-password' /> }
                         </FloatingLabel>
 
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" name="remember" label="Remember me" onChange={(e) => updateRemember(e.target.value)} />
+                            <Form.Check type="checkbox" name="remember" label="تذكّرني" onChange={(e) => updateRemember(e.target.value)} />
                         </Form.Group>
                         <Button variant="dark" type="submit" onClick={handleSubmit}>
-                            Submit
+                            الدخول
                         </Button>
                         <br />
                         <br />
                         <Form.Text>
-                        Don't have an account? <Link to='/register'>register here</Link>
+                        ليس لديك حساب؟ <Link to='/ar/register'>سجّل هنا</Link>
                         </Form.Text>
                     </Form>
                 </Col>

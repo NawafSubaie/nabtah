@@ -1,10 +1,10 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
 import { Container } from 'react-bootstrap';
-import aboutImage from './icons/about-plant.png';
+import aboutImage from './../icons/about-plant.png';
 import Carousel from 'react-bootstrap/Carousel';
-import fahad from './icons/fahad.jpeg';
-import nawaf from './icons/nawaf.jpeg';
+import fahad from './../icons/fahad.jpeg';
+import nawaf from './../icons/nawaf.jpeg';
 import { BsLinkedin, BsTwitter } from 'react-icons/bs';
 import Footer from './Footer';
 

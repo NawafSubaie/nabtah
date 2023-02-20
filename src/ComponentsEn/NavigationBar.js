@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import  NavDropdown  from 'react-bootstrap/NavDropdown';
-import logo from './icons/logo.png'
+import logo from './../icons/logo-eng.png'
 import {AiOutlineUser} from 'react-icons/ai'
 import {MdOutlineLanguage} from 'react-icons/md'
 import { Link } from 'react-router-dom';
@@ -36,13 +36,15 @@ function NavigationBar() {
                     <Nav.Link href="#objectives">Objectives</Nav.Link>
                     <Nav.Link href="#plants">Plants</Nav.Link>
                     <Nav.Link href="about">About</Nav.Link>
+                
             </Nav>
             <Nav>
                     <Nav.Link href="/login">
                         <AiOutlineUser />
                     </Nav.Link>
-                    <Nav.Link>
-                        <MdOutlineLanguage  />
+                    <Nav.Link  href="/ar">
+                        <MdOutlineLanguage id="changeLanguage" />
+                        
                     </Nav.Link>
                     
             </Nav>

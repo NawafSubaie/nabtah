@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import axios from 'axios';
 import { Alert } from 'react-bootstrap';
 import NavigationBar from './NavigationBar';
-import plantRegister from './icons/plant.png';
+import plantRegister from './../icons/plant.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
 import {FaRegEyeSlash} from 'react-icons/fa'
@@ -51,9 +51,9 @@ function Register() {
                         }
 
                         else 
-                            updateError('An email exists with same credintials')
+                            updateError('رقم الجوال مسجّل مسبقًا')
                         })
-                        .catch(err => updateError('Something wrong happened, it was not your fault !'))
+                        .catch(err => updateError('لقد حدث خطأ'))
 
                     updateError('')
                     updatePhoneNumberBorder('2px solid #555c79')
@@ -61,7 +61,7 @@ function Register() {
                     updateCPasswordBorder('2px solid #555c79')
             }
                 else {
-                    updateError('phone number must start with 05 and be 10 character long only digits')
+                    updateError('رقم الجوال يبدأ بـ05 والحد الأقصى 10 خانات')
                     updatePhoneNumberBorder('2px solid darkred')
                     updatePasswordBorder('2px solid #555c79')
                     updateCPasswordBorder('2px solid #555c79')
@@ -69,7 +69,7 @@ function Register() {
             }
 
             else {
-                updateError('Minimum eight characters, at least one letter and one number')
+                updateError('الحد الادنى 8، حرف واحد او رقم واحد على الاقل')
                 updatePasswordBorder('2px solid darkred')
                 updateCPasswordBorder('2px solid darkred')
             }
@@ -78,7 +78,7 @@ function Register() {
         else {
             updatePasswordBorder('2px solid darkred')
             updateCPasswordBorder('2px solid darkred')
-            updateError('Password and confirm password do not match')
+            updateError('كلمة المرور والتأكيد غير متطابقتان')
         }
 
 
@@ -95,40 +95,40 @@ function Register() {
         
             <Row className='justify-content-center'>
                 <Col className='align-items-center align-self-center'>
-                    <h1 className='Poppins text-left'>Register</h1>
+                    <h1 className='Poppins text-left'>التسجيل</h1>
                             <Form className='mt-5'>
 
-                            <FloatingLabel controlId="floatingInput"  label="First Name" className="mb-3">
+                            <FloatingLabel controlId="floatingInput"  label="الاسم الاول" className="mb-3">
                                     <Form.Control type="text" name="first-name"  className='shadow-none' style={{border:'2px solid #555c79'}} placeholder="First name" onChange={((e)=> updateFName(e.target.value) )}/>
                                 </FloatingLabel>
 
-                                <FloatingLabel controlId="floatingInput"  label="Last Name" className="mb-3">
+                                <FloatingLabel controlId="floatingInput"  label="اسم العائلة" className="mb-3">
                                     <Form.Control type="text" name="last-name"  className='shadow-none ' style={{border:'2px solid #555c79'}} placeholder="Last name" onChange={((e)=> updateLName(e.target.value) )}/>
                                 </FloatingLabel>
                                 
-                                <FloatingLabel controlId="floatingInput"  label="Phone Number" className="mb-3">
+                                <FloatingLabel controlId="floatingInput"  label="رقم الجوال" className="mb-3">
                                     <Form.Control type="email" name="phone-number"   className='shadow-none ' style={{border:phoneNumberBorder}} placeholder="05********" onChange={((e)=> updatePhoneNumber(e.target.value) )}/>
                                     <Form.Text id="passwordHelpBlock" muted>
-                                        Example: 0557345192
+                                        مثال: 0557345192
                                     </Form.Text>
                                 </FloatingLabel>
                                 
 
-                                <FloatingLabel controlId="floatingInput"  label="Password" className="mb-3">
+                                <FloatingLabel controlId="floatingInput"  label="كلمة المرور" className="mb-3">
                                     <Form.Control type={type} className='shadow-none' name="password" style={{border:passwordBorder}} placeholder="12345678" onChange={((e)=> updatePassword(e.target.value) )} />
                                     {!showHide?<FaRegEyeSlash className='hide-show-password' style={{fill:'#555c79'}} onClick={(e) => {updateType('text');updateShowHide(!showHide)}}/>: <FaRegEye onClick={(e) =>{updateType('password');updateShowHide(!showHide)}} className='hide-show-password' /> }
                                     <Form.Text id="passwordHelpBlock" muted>
-                                        Minimum eight characters, at least one letter and one number:
+                                       الحد الادنى 8، حرف واحد او رقم واحد على الاقل
                                     </Form.Text>
                                 </FloatingLabel>
 
-                                <FloatingLabel controlId="floatingInput"  label="Confirm password" className="mb-3">
+                                <FloatingLabel controlId="floatingInput"  label="تأكيد كلمة المرور" className="mb-3">
                                     <Form.Control type={type} name="confirm-password"  className='shadow-none ' style={{border:cpasswordBorder}} placeholder="name@example.com" onChange={((e)=> updateCPassword(e.target.value) )} />
                                     {!showHide?<FaRegEyeSlash className='hide-show-password' style={{fill:'#555c79'}} onClick={(e) => {updateType('text');updateShowHide(!showHide)}}/>: <FaRegEye onClick={(e) =>{updateType('password');updateShowHide(!showHide)}} className='hide-show-password' /> }
                                 </FloatingLabel>
                                 <br />
                                 <Button variant="dark" type="submit" onClick={handleRegister}>
-                                Register
+                                سجّل
                                 </Button>
                         </Form>
                        
@@ -143,7 +143,7 @@ function Register() {
             </Alert>}
 
             {IsRegistered && <Alert className='mt-3' variant='success'>
-                Nice!, You have Successfully Registered, now please proceed to the <Link to='/login'>login page</Link>
+                لقد تم تسجيلك بنجاح، قم بالعودة الى صفحة الدخول <Link to='/login'>تسجيل الدخول</Link>
             </Alert>}
          </Container>
          <Footer />

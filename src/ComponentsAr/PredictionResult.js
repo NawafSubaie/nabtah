@@ -1,10 +1,10 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
 import { Container,Row,Col } from 'react-bootstrap';
-import plantName from './icons/terpene.png';
-import accuracy  from './icons/accuracy.png';
-import disease from './icons/disease.png';
-import cherryHealthy from './icons/cherry-healthy.JPG'
+import plantName from './../icons/terpene.png';
+import accuracy  from './../icons/accuracy.png';
+import disease from './../icons/disease.png';
+import cherryHealthy from './../icons/cherry-healthy.JPG'
 function PredictionResult(props) {
 
 

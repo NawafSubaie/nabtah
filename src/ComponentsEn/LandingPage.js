@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import {BsUpload} from 'react-icons/bs';
-import happy_plant from './icons/happy-plant.png'
+import happy_plant from './../icons/happy-plant.png'
 import axios from 'axios';
 
 
