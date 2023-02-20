@@ -75,7 +75,7 @@ function NavigationBar() {
                     <NavDropdown.Item onClick={() => {axios.post("http://localhost:5000/logout",{},{withCredentials:true}).then(resp => {sessionStorage.removeItem("logged");sessionStorage.removeItem("name");window.location.href = '/'})}}>Logout</NavDropdown.Item>
                 </NavDropdown>
                     <Nav.Link>
-                        <MdOutlineLanguage  />
+                        <MdOutlineLanguage onClick={()=> window.location.href = '/ar'}  />
                     </Nav.Link> 
             </Nav>
             </Navbar.Collapse>

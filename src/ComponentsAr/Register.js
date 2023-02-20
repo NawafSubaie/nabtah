@@ -47,7 +47,7 @@ function Register() {
                         
                         if(resp.status == 200 && resp.data == 'success') {
                             updateRegistered(true)
-                            setInterval(()=> window.location.href = '/login',5000)
+                            setInterval(()=> window.location.href = '/ar/login',5000)
                         }
 
                         else 

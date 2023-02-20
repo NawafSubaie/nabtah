@@ -13,7 +13,7 @@ function LandingPage() {
 
     function handleUpload() {
         if(sessionStorage.getItem('logged')) {
-            window.location.href = '/image'
+            window.location.href = '/ar/image'
         }
         else {
             window.location.href = '/ar/login'

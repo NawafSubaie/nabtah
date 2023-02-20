@@ -79,7 +79,8 @@ def getImage():
         cursor.execute(sql,args)
         mydb.commit()
         cursor.close()
-        return {'plant_name':plant_name,'disease':'N/A','probability':accuracy,'description':'This image is not a plant','treatment':'No suggested treatment'}
+        return {'plant_name':plant_name,'disease':'N/A','probability':accuracy,'description':'This image is not a plant','treatment':'No suggested treatment',
+        "plant_name_ar":'ليست نبتة',"disease_ar":"لا ينطبق",'description_ar':'الصورة هذه ليست نبتة','treatment_ar':"لا يوجد علاج مقترح"}
     
     elif labels.inverse_transform(pred_result)[0] == 'Non___supported___plant':
         #database connection
@@ -99,7 +100,9 @@ def getImage():
         cursor.execute(sql,args)
         mydb.commit()
         cursor.close()
-        return {'plant_name':plant_name,'disease':'N/A','probability':accuracy,'description':'We are sorry, this plant is currently not supported yet','treatment':'No suggested treatment'}
+        return {'plant_name':plant_name,'disease':'N/A','probability':accuracy,'description':'We are sorry, this plant is currently not supported yet','treatment':'No suggested treatment',
+        "plant_name_ar":'نبتة غير مدعومة',"disease_ar":"لا ينطبق",'description_ar':'الصورة هذه ليست نبتة','treatment_ar':"لا يوجد علاج مقترح"}
+        
 
     else:
         total_result = str(labels.inverse_transform(pred_result)[0])
@@ -111,7 +114,9 @@ def getImage():
         cursor.execute(f"select * from disease where plant_name like '{total_result[0]}' and disease like '{total_result[1]}'")
         result = cursor.fetchone()
         print(result['plant_name'])
-        dct_result = {'plant_name':total_result[0],'disease':total_result[1],'probability':str(np.max(pred_result)),'description':result['description'],'treatment':result['treatment']}
+        dct_result = {'plant_name':total_result[0],'disease':total_result[1],'probability':str(np.max(pred_result)),'description':result['description'],'treatment':result['treatment'],
+        "plant_name_ar":result['plant_name_ar'],"disease_ar":result['disease_ar'],'description_ar':result['description_ar'],'treatment_ar':result['treatment_ar']}
+        
         
         #process the image/ save it/ transform it into a blob value/ then remove it from os
         imageFile = request.files['img']

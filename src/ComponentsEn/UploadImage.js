@@ -7,6 +7,7 @@ import { Button, Col, Container, Row, Alert } from 'react-bootstrap';
 import { FileUploader } from "react-drag-drop-files";
 import PredictionResult from './PredictionResult';
 import Footer from './Footer';
+import {Spinner} from 'react-bootstrap'
 
 const fileTypes = ["JPEG", "PNG","JPG"];
 function UploadPage() {
@@ -17,6 +18,7 @@ function UploadPage() {
     const [apiResult, updateResult] = useState(null)
     const [err,updateErr] = useState(false);
     const [errUpload,updateErrUpload] = useState(null)
+    const [waitingResult,setWaitingResult] = useState(false)
 
     useEffect(() => {
       setVisible(true)
@@ -38,19 +40,21 @@ function UploadPage() {
 
         const fd = new FormData()
         fd.append('img',file,file.name)
+        setWaitingResult(true)
         console.log(fd)
          await axios.post('http://localhost:5000/image',fd,{withCredentials:true})
         .then(res => {
             
             console.log(res.data)
             updateResult(res.data)
-
+            setWaitingResult(false)
         }).catch(err => updateErrUpload('Sorry, this file image is too large, please try cropping the content.'))
         
     }
 
     else {
       updateErr(true)
+      
     }
 
     
@@ -76,10 +80,12 @@ function UploadPage() {
       <br />
       {errUpload != null &&<Alert style={{width:'30%',margin:'auto'}} variant='warning'>{errUpload}</Alert> }
       <br />
-      {URLState && <img src={URLState} />}
+      {URLState && <img style ={{width:'256px',height:'256px'}}src={URLState} />}
       <br />
       <p style={{fontFamily:'Poppins',fontWeight:'lighter'}}>{file ? `File name: ${file.name}` : "no files uploaded yet"}</p>
-      
+      <Row className='d-flex'>
+        {waitingResult && <Spinner animation="border" variant="dark" style={{margin:'auto'}}/>}
+      </Row>
       <Row className='justify-content-center'>
       <Col style={{fontFamily:'Poppins'}} ><Button variant='dark' className='m-3' onClick={handlePrediction}>Predict Disease/Identify Plant</Button> 
       

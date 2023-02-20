@@ -88,7 +88,7 @@ function Account(props) {
                         {showHide &&  <Form.Text id="passwordHelpBlock" muted className='text-center d-block'>الحد الادنى 8، حرف واحد او رقم واحد على الاقل</Form.Text>}
                         <br />
                         <Button className='d-block m-auto' variant="dark" type="submit" onClick={handleEdit}>
-                            Edit Account
+                            تحديث معلومات الحساب
                         </Button>
                     </Form>
                     {error &&  <Alert variant='danger'>الحد الادنى 8، حرف واحد او رقم واحد على الاقل</Alert>}

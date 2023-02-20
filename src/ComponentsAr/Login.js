@@ -49,7 +49,7 @@ function Login() {
                                 sessionStorage.setItem('logged', true);
                                 sessionStorage.setItem('name',resp.data)
                                 console.log(resp)
-                                window.location.href = '/'
+                                window.location.href = '/ar'
                             }
 
                             else {

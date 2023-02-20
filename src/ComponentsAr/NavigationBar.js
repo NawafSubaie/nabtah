@@ -28,28 +28,36 @@ function NavigationBar() {
         return (
             <Navbar className='p-3 mt-2' expand="xl" >
             <Container fluid>
-            <Navbar.Brand href="/ar"><img src={logo} style={{width:'200px'}}  /></Navbar.Brand>
+            
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-between'>
-                    <Nav className=" text-capatalize " style={{marginLeft:'50px'}}>
-                    <Nav.Link href="/ar">الرئيسية</Nav.Link>
-                    <Nav.Link href="/ar/#objectives">الأهداف</Nav.Link>
-                    <Nav.Link href="/ar/#plants">النباتات</Nav.Link>
-                    <Nav.Link href="/ar/about">عنّا</Nav.Link>
                 
-            </Nav>
             <Nav>
-                    <Nav.Link href="/ar/login">
-                        <AiOutlineUser />
-                    </Nav.Link>
-                    <Nav.Link  href="/">
+            <Nav.Link  href="/">
                         <MdOutlineLanguage  />
                         
                     </Nav.Link>
+                    <Nav.Link href="/ar/login">
+                        <AiOutlineUser />
+                    </Nav.Link>
+                   
                     
             </Nav>
+            <Nav className=" text-capatalize " style={{marginLeft:'50px'}}>
+                    
+                   
+                    
+                    <Nav.Link href="/ar/#objectives">الأهداف</Nav.Link>
+                    <Nav.Link href="/ar/#plants">النباتات</Nav.Link>
+                    <Nav.Link href="/ar/about">عنّا</Nav.Link>
+                    <Nav.Link href="/ar">الرئيسية</Nav.Link>
+                    
+                    
+                    
+                
+            </Nav>
             </Navbar.Collapse>
-            
+            <Navbar.Brand href="/ar"><img src={logo} style={{width:'200px'}}  /></Navbar.Brand>
             </Container>
         </Navbar>
         );
@@ -58,28 +66,36 @@ function NavigationBar() {
         return (
             <Navbar className='p-3 mt-2' expand="xl" >
             <Container fluid>
-            <Navbar.Brand href="/ar"><img src={logo} style={{width:'200px',marginRight:'50px'}} /></Navbar.Brand>
+          
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className='justify-content-between'>
-                    <Nav className=" text-capatalize">
-                    <Nav.Link href="/ar">Home</Nav.Link>
-                    <Nav.Link href="/ar/#objectives">Objectives</Nav.Link>
-                    <Nav.Link href="/ar/#plants">Plants</Nav.Link>
-                    <Nav.Link href="/ar/about">About</Nav.Link>
-            </Nav>
+                 
             <Nav>
-                <NavDropdown title={`Signed in as ${user}`} id="basic-nav-dropdown" style={{fontSize:'0.75em',marginTop:'10px'}}>
-                    <NavDropdown.Item style={{fontsize:'0.75em'}} href="/account">Account</NavDropdown.Item>
-                    <NavDropdown.Item href="/history">History</NavDropdown.Item>
+                <NavDropdown title={`تم تسجيل الدخول ${user}`} id="basic-nav-dropdown" style={{fontSize:'0.75em',marginTop:'10px'}}>
+                    <NavDropdown.Item style={{fontsize:'0.75em'}} href="/ar/account">الحساب</NavDropdown.Item>
+                    <NavDropdown.Item href="/ar/history">سجل التوقعات</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item onClick={() => {axios.post("http://localhost:5000/logout",{},{withCredentials:true}).then(resp => {sessionStorage.removeItem("logged");sessionStorage.removeItem("name");window.location.href = '/'})}}>Logout</NavDropdown.Item>
+                    <NavDropdown.Item onClick={() => {axios.post("http://localhost:5000/logout",{},{withCredentials:true}).then(resp => {sessionStorage.removeItem("logged");sessionStorage.removeItem("name");window.location.href = '/'})}}>تسجيل الخروج</NavDropdown.Item>
                 </NavDropdown>
                     <Nav.Link  href="/">
                         <MdOutlineLanguage  />
                     </Nav.Link> 
             </Nav>
+            <Nav className=" text-capatalize " style={{marginLeft:'50px'}}>
+                    
+                   
+                    
+                    <Nav.Link href="/ar/#objectives">الأهداف</Nav.Link>
+                    <Nav.Link href="/ar/#plants">النباتات</Nav.Link>
+                    <Nav.Link href="/ar/about">عنّا</Nav.Link>
+                    <Nav.Link href="/ar">الرئيسية</Nav.Link>
+                    
+                    
+                    
+                
+            </Nav>
             </Navbar.Collapse>
-            
+            <Navbar.Brand href="/ar"><img src={logo} style={{width:'200px',marginRight:'50px'}} /></Navbar.Brand>
             </Container>
         </Navbar>
         )

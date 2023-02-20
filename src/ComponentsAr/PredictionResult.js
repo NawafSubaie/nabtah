@@ -31,33 +31,33 @@ function PredictionResult(props) {
                 <Row>
                     
                     <Col className=''>
-                    <h1 className='text-center Poppins p-5'>Result</h1>
+                    <h1 className='text-center Poppins p-5'>النتائج</h1>
                         <Row className='justify-content-center'>
                             <Col className='m-3'>
                                 <Row className='justify-content-center result-card '>
                                     <Col className='text-center'>
                                     <img src ={plantName} style={{width:'88px',height:'88px'}}/>
-                                    <p className='result-title Poppins p-3'>Plant Name</p><p className='result-plant Poppins'>{props.plantName}</p></Col>
+                                    <p className='result-title Poppins p-3'>اسم النبتة</p><p className='result-plant Poppins'>{props.plantName}</p></Col>
                                 </Row>
                             </Col>
                             <Col  className='m-3'>
                                 <Row className='justify-content-center result-card'>
                                     <Col className='text-center'>
                                     <img src ={accuracy} style={{width:'88px',height:'88px'}}/>
-                                    <p className='result-title Poppins p-3'>Accuracy</p><p className='result-plant Poppins' style={{color:probColor()}}>{props.probability}</p></Col>
+                                    <p className='result-title Poppins p-3'>الدقة</p><p className='result-plant Poppins' style={{color:probColor()}}>{props.probability}</p></Col>
                                 </Row>
                             </Col>
                             <Col className='m-3'>
                                 <Row className='justify-content-center result-card'>
                                     <Col className='text-center'>
                                     <img src ={disease} style={{width:'88px',height:'88px'}}/>
-                                    <p className='result-title Poppins p-3'>Disease</p><p className='result-plant Poppins text-capitalize'>{props.diseaseName}</p></Col>
+                                    <p className='result-title Poppins p-3'>المرض</p><p className='result-plant Poppins text-capitalize'>{props.diseaseName}</p></Col>
                                 </Row>
                             </Col>
                         </Row>
                         <Row className='mt-5 Poppins disease-info-card'>
                             <Col>
-                            <h1 className='title-card'>Disease Information:</h1>
+                            <h1 className='title-card'>معلومات المرض:</h1>
                             <p style={{textAlign:'justify'}}>{props.description}</p></Col>
                         </Row>
                     </Col>
@@ -68,7 +68,7 @@ function PredictionResult(props) {
                     </Col>
 
                     <Row className='mt-5  Poppins suggested-treatment-card' >
-                            <h1 className='title-card'>Suggested Treatment:</h1>
+                            <h1 className='title-card'>العلاج المقترح:</h1>
                             <p style={{textAlign:'justify'}}>{props.treatment}</p>
                         </Row>
 
